@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#pragma warning(disable:4996) //ÄÄÆÄÀÏ ¿À·ù ¹«½Ã
+#pragma warning(disable:4996) //ì»´íŒŒì¼ ì˜¤ë¥˜ ë¬´ì‹œ
 #define _CRT_SECURE_NO_WARNINGS
 
 
@@ -154,7 +154,7 @@ int main(void)
 
 		ALU_func(ALU_control, reg_read.Read_data_1, mux_result);
 
-		/***************ALU control ³¡ => PC °è»ê *****************/
+		/***************ALU control ë => PC ê³„ì‚° *****************/
 
 		inst_ext_shift = Shift_Left_2(inst_ext_32);
 		pc_add_inst = Add(inst_ext_shift, pc_add_4);
@@ -165,7 +165,7 @@ int main(void)
 
 		pc = Mux(control.Jump, mux_result, jump_addr);
 
-		/*****************PC °è»ê ³¡ ***************/
+		/*****************PC ê³„ì‚° ë ***************/
 
 		// memory access
 		mem_result = Memory_Access(control.MemWrite, control.MemRead, alu.ALU_result, reg_read.Read_data_2);
@@ -299,9 +299,9 @@ unsigned int Memory_Access(unsigned char MemWrite, unsigned char MemRead, unsign
 {
 	unsigned int Read_data = 0;
 
-	if (MemRead == 1) //addr¿¡¼­ data ÀĞ±â (LW)
+	if (MemRead == 1) //addrì—ì„œ data ì½ê¸° (LW)
 		Read_data = mem[addr];
-	if (MemWrite == 1)//addr¿¡ data ÀúÀå(SW) => memory¿¡¸¸ ¾²°í ³¡
+	if (MemWrite == 1)//addrì— data ì €ì¥(SW) => memoryì—ë§Œ ì“°ê³  ë
 		mem[addr] = write_data;
 
 	return Read_data;
