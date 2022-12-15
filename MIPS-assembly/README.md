@@ -1,1 +1,1 @@
-This assembly code can simulate with MARS
+This assembly code can be tried with the MARS simulator
